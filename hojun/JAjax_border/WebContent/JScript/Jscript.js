@@ -2,7 +2,7 @@
  *  create date : mon, october 6
  */
 (function(){
-	var Create_Jborder =(function(){
+	var Create_Jborder =(function(json_datas){
 		
 	});
 	var Jpaging = (function(count_data,Elementid){
