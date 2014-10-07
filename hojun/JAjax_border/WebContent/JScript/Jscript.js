@@ -20,8 +20,7 @@
 					"<td>"+json_data.title.substring(1,20)+"</td>"
 					"<td>"+json_data.content.substring(1,30)+"<td>" +
 					"<td>"+json_data.date+"<td>" +
-					"<td>"+json_data.oder+"</td>"+
-					"</table>";
+					"<td>"+json_data.oder+"</td>";
 		}
 		
 		
