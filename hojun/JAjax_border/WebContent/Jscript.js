@@ -26,7 +26,7 @@ var Create_Jborder = (function(json_data, Element_id, URL) {
 	});
 
 });
-// Do AJAX request and let it respond within a second
+
 
 // basic Jpaging
 var Jpaging = (function(count_data, Elementid) {
