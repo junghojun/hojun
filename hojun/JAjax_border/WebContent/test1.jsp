@@ -12,8 +12,10 @@
 <body>
  
 <div id="table_header"></div>
+<div id="table_header1"></div>
 <script>
-Create_Jborder(1,$( "#table_header" ));
+ Create_Jborder(1,$( "#table_header" )); 
+
 </script>
 
  
