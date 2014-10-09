@@ -3,7 +3,7 @@
  */
 
 // basic table sample
-var Create_Jborder = (function(json_data, Element_id, URL) {
+var Jborder = (function(json_data, Element_id, URL) {
 	var top = "<table border='1' id='header'>" + "<tr>" + "<td>NO</td>"
 	+ "<td>title</td>" + "<td>content</td>" + "<td>date<td>"
 	+ "<td>oder</td>" + "</tr>";
@@ -16,25 +16,7 @@ top += "<tr>" + "<td>" + data.number + "</td>" + "<td>"
 
 }
 $(Element_id).append(top);
-	
-	
-	/*$.ajax({
-		url : URL,
-		dataType : 'json',
-		data : {
-			'sleep' : 0
-		},
-		success : function(data) {
-			
-			
-		}
-	});*/
-
-});
-
-
-// basic Jpaging
-var Jpaging = (function(beforList,nextList,Element,view_number_count,total_record_count) {
+},Jpaging = (function(beforList,nextList,Element,view_number_count,total_record_count) {
 	//temp values
 	total_record_count = 200;
 	view_number_count = 10;
@@ -100,19 +82,27 @@ var Jpaging = (function(beforList,nextList,Element,view_number_count,total_recor
 	$(beforList).append("<a href='#?"+prev_pageno+"' id='count_number'>"+"[beforlist]</a>");
 	$(nextList).append("<a href='#?"+next_pageno+"' id='count_number'>"+"[next]</a>");
 
-});
-var Jcheck_value = (function(check_data) {
+}),Jcheck_value = (function(check_data) {
 
-});
-var JWrite = (function(write_data) {
+}), JWrite = (function(URL) {
+	$.ajax({
+		url : URL,
+		dataType : 'json',
+		data : {
+			'sleep' : 0
+		},
+		success : function(data) {
+			JReader_List(data);
+			
+			
+		}
+	});
+}),JReader_List = (function(data) {
 
-});
-var JReader_List = (function() {
+}),JEdite_content = (function(data) {
 
-});
-var JEdite_content = (function(data) {
+}),delete_content = (function(data) {
 
-});
-var delete_content = (function(data) {
-
-});
+}), CRM_Reader = (function(data){
+	
+}));
