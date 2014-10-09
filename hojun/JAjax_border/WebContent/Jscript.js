@@ -9,7 +9,7 @@ var Jborder = (function(json_data, Element_id, URL) {
 	+ "<td>oder</td>" + "</tr>";
 
 for (var int = 0; int < json_data.length; int++) {
-top += "<tr>" + "<td>" + data.number + "</td>" + "<td>"
+top += "<tr id='data'>" + "<td>" + data.number + "</td>" + "<td>"
 		+ data.title.substring(1, 20) + "</td>"
 		"<td>" + data.content.substring(1, 30) + "<td>" + "<td>"
 		+ data.date + "<td>" + "<td>" + data.oder + "</td>";
@@ -102,7 +102,7 @@ $(Element_id).append(top);
 		async: true,
 		cache: false,
 		success : function(data) {
-			JReader_List(data);
+			//JReader_List(data); this is keep because I'll edite logic
 			location.href=List_URL;
 			
 		}
@@ -113,7 +113,7 @@ $(Element_id).append(top);
  */
 }),JReader_tail_List = (function(data) {
 
-}),Jborder_List = (function(URL,data,border_List) {
+})/*,Jborder_List = (function(URL,data,border_List) {
 	$.ajax({
 		type:'POST',
 		url : URL,
@@ -130,7 +130,7 @@ $(Element_id).append(top);
 			
 		}
 	});
-}),JEdite_content = (function(data) {
+})*/,JEdite_content = (function(data) {
 
 }),delete_content = (function(data) {
 
