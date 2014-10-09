@@ -16,11 +16,20 @@ top += "<tr>" + "<td>" + data.number + "</td>" + "<td>"
 
 }
 $(Element_id).append(top);
+/*
+ * this is border paging you can load this paging load for paging example :
+ * beforeListElement : '<' moving to paging. nextListElement : '>' moving to
+ * paging. view_number_count : showing first border page or more page you can
+ * chooing page count total_record_count : this is very important, because input
+ * total List and HashTable if you can use this paging, you can change this
+ * paging, css or paging roule
+ */ 
+
 },Jpaging = (function(beforList,nextList,Element,view_number_count,total_record_count) {
-	//temp values
+	// temp values
 	total_record_count = 200;
 	view_number_count = 10;
-	////////////////////////////////////////
+	// //////////////////////////////////////
 	
 	total_record_count = parseInt(total_record_count);
 	view_number_count = parseInt(view_number_count);
@@ -84,21 +93,43 @@ $(Element_id).append(top);
 
 }),Jcheck_value = (function(check_data) {
 
-}), JWrite = (function(URL) {
+}), JWrite = (function(Write_URL,List_URL,data) {
 	$.ajax({
+		type:'POST',
 		url : URL,
 		dataType : 'json',
-		data : {
-			'sleep' : 0
-		},
+		data : data,
+		async: true,
+		cache: false,
 		success : function(data) {
 			JReader_List(data);
-			
+			location.href=List_URL;
 			
 		}
 	});
-}),JReader_List = (function(data) {
+/*
+ * this is showing to tail part.
+ * 
+ */
+}),JReader_tail_List = (function(data) {
 
+}),Jborder_List = (function(URL,data,border_List) {
+	$.ajax({
+		type:'POST',
+		url : URL,
+		dataType : 'json',
+		data : data,
+		async: true,
+		cache: false,
+		success : function(data) {
+		$(border_List).html("<td>"+data.no+"</td>" +
+				"<td>"+data.title+"</td>" +
+						"<td>"+data.content.substring(0,20)+"</td>" +
+								"<td>"+data.date+"</td>" +
+										"<td>"+data.order+"</td>");
+			
+		}
+	});
 }),JEdite_content = (function(data) {
 
 }),delete_content = (function(data) {
